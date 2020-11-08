@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Lift Planner</title>
+    <link rel="stylesheet" href="style.css" media="screen">
+  </head>
+  <body>
+    <header>
+      <a href="#"><h1 class="site-title">Lift Planner</h1></a>
+      <nav class="navbar">
+        <ul class="navlist">
+          <li class="navitem navlink active"><a href="/logs">Log</a></li>
+          <li class="navitem navlink"><a href="/workouts">Workouts</a></li>
+          <li class="navitem navlink"><a href="/create">Create</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="underhead">
+    <h1 class="pageid">Workout Plans</h1>
+    <table class="logtable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Time</th>
+          <th>Lifts</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <body>
+        <tr>
+          <td>{planName}</td>
+          <td>{durtion}</td>
+          <td><div class = "muscle-list"><ul>
+            <p>{Lift_Muscles}</p>
+            <li>Lift 1</li>
+            <li>Lift 2</li>
+            <li>Lift 3</li>
+          </ul></div></td>
+          <td>{description}</td>
+          <td class="table-button"><button type="button" name="do-button">Do Workout</button></td>
+        </tr>
+        <tr>
+          <!-- <td class="table-button"><button type="button" name="button">Create Workout</button></td> -->
+        </tr>
+      </body>
+    </table>
+  </div>
+  </body>
+</html>

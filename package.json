@@ -1,0 +1,13 @@
+{
+  "name": "project_3",
+  "version": "1.0.0",
+  "description": "html outline",
+  "main": "server.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC"
+}

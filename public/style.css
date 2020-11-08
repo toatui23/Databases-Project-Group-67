@@ -1,0 +1,93 @@
+body{
+  font-family: Roboto, Helvetica, sans-serif;
+  margin: 0;
+  background-color: grey;
+}
+
+.site-title{
+  background-color: #fa7c46;
+  margin: 0;
+  border-color: black;
+  border-style: none none solid none;
+  border-width: 1px;
+}
+
+.navbar {
+  background-color: #fa7c46;
+  font-size: 18px;
+  line-height: 22px;
+  border-color: black;
+  border-style: none none solid none;
+  border-width: 1px;
+}
+
+.pageid{
+  align-self: center;
+}
+
+body{
+  align-items: center;
+}
+
+.underhead{
+  display: flex;
+  flex-direction: column;
+}
+
+.logtable{
+  margin: 0 20% 0 20%;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  background-color: orange;
+}
+
+.upload-w{
+  padding: 5px 10px 5px 10px;
+  margin: 20px 35% 20px 35%;
+}
+
+.create-table{
+  margin: 0 20% 0 20%;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  background-color: orange;
+}
+
+th{
+  font-style: bold;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+}
+
+td{
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+}
+
+.table-button{
+  border-width: 0;
+}
+
+.muscle-list{
+  display: flex;
+  flex-direction: column;
+}
+
+.navlist {
+  margin: 0 0 0 10px;
+  padding: 0;
+}
+
+.navitem {
+  display: inline-block;
+  margin: 0 20px 0 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}

@@ -18,27 +18,31 @@
       </nav>
     </header>
     <div class="underhead">
-    <h1 class="pageid">Workout Log</h1>
+    <h1 class="pageid">Users</h1>
     <table class="logtable">
       <thead>
         <tr>
           <th>ID</th>
-          <th>Workout</th>
-          <th>Lifts</th>
-          <th>Date</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Password</th>
         </tr>
       </thead>
       <body>
         <tr>
-          <td>{planID}</td>
-          <td>{planName}</td>
-          <td><div class = "muscle-list"><ul>
-            <p>{Lift_Muscles}</p>
-            <li>Lift 1</li>
-            <li>Lift 2</li>
-            <li>Lift 3</li>
-          </ul></div></td>
-          <td>{date}</td>
+          <td>{userID}</td>
+          <td>{fName}</td>
+          <td>{lName}</td>
+          <td>{email}</td>
+          <td>{password}</td>
+        </tr>
+        <tr>
+          <td><button type="user-button" name="ADD">Add User</button></td>
+          <td><input type="text" placeholder="First Name"class="lift-entry"></td>
+          <td><input type="text" placeholder="Last Name"class="lift-entry"></td>
+          <td><input type="text" placeholder="Email"class="lift-entry"></td>
+          <td><input type="text" placeholder="Password"class="lift-entry"></td>
         </tr>
       </body>
     </table>

@@ -14,31 +14,24 @@
           <li class="navitem navlink active"><a href="/logs">Log</a></li>
           <li class="navitem navlink"><a href="/workouts">Workouts</a></li>
           <li class="navitem navlink"><a href="/create">Create</a></li>
+          <li class="navitem navlink"><a href="/plans_lifts">Plans_Lifts</a></li>
+          <li class="navitem navlink"><a href="/lifts_muscles">Lifts_Muscles</a></li>
         </ul>
       </nav>
     </header>
     <div class="underhead">
-    <h1 class="pageid">Workout Log</h1>
+    <h1 class="pageid">Plans_Lifts</h1>
     <table class="logtable">
       <thead>
         <tr>
-          <th>ID</th>
-          <th>Workout</th>
-          <th>Lifts</th>
-          <th>Date</th>
+          <th>planID</th>
+          <th>liftID</th>
         </tr>
       </thead>
       <body>
         <tr>
           <td>{planID}</td>
-          <td>{planName}</td>
-          <td><div class = "muscle-list"><ul>
-            <p>{Lift_Muscles}</p>
-            <li>Lift 1</li>
-            <li>Lift 2</li>
-            <li>Lift 3</li>
-          </ul></div></td>
-          <td>{date}</td>
+          <td>{liftID}</td>
         </tr>
       </body>
     </table>

@@ -8,7 +8,7 @@ function renderFile(path, res){
 	fs.readFile(path, function(error, data){
 		if(error){
 			res.writeHead(404);
-			res.wrtie('File not found');
+			res.write('File not found');
 		}
 		else{
 			res.writeHead(200);
@@ -36,6 +36,9 @@ function requestHandler(req, res){
 	var path = req.url;
 
 	switch(path){
+		case '/user':
+			renderFile('./public/user.html', res);
+      break;
 		case '/logs':
 			renderFile('./public/logs.html', res);
       break;
@@ -45,6 +48,12 @@ function requestHandler(req, res){
     case '/create':
       renderFile('./public/create.html', res);
       break;
+		case '/plans_lifts':
+	    renderFile('./public/plans_lifts.html', res);
+	    break;
+		case '/lifts_muscles':
+			renderFile('./public/lifts_muscles.html', res);
+			break;
 		case '/index.js':
 			renderFile('./public/index.js', res);
 			break;

@@ -1,0 +1,32 @@
+<div class="underhead">
+<h1 class="pageid">Workout Plans</h1>
+<table class="logtable">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Time</th>
+      <th>Lifts</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <body>
+    {{#each plans}}
+    <tr>
+      <td>{{planName}}</td>
+      <td>{{duration}}</td>
+      <td><div class = "muscle-list"><ul>
+        <p>{Lift_Muscles}</p>
+        {{#each lifts}}
+        <li>{{lift_name}} Sets:{{sets}} Reps:{{reps}}</li>
+        {{/each}}
+      </ul></div></td>
+      <td>{{description}}</td>
+      <td class="table-button"><button type="button" name="do-button">Do Workout</button></td>
+    </tr>
+    {{/each}}
+    <tr>
+      <!-- <td class="table-button"><button type="button" name="button">Create Workout</button></td> -->
+    </tr>
+  </body>
+</table>
+</div>

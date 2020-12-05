@@ -1,0 +1,28 @@
+<div class="underhead">
+<h1 class="pageid">Workout Log</h1>
+<table class="logtable">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Workout</th>
+      <th>Lifts</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <body>
+    {{#each logs}}
+    <tr>
+      <td>{{planID}}</td>
+      <td>{planName}</td>
+      <td><div class = "muscle-list"><ul>
+        <p>{Lift_Muscles}</p>
+        <li>Lift 1</li>
+        <li>Lift 2</li>
+        <li>Lift 3</li>
+      </ul></div></td>
+      <td>{date}</td>
+    </tr>
+    {{/each}}
+  </body>
+</table>
+</div>

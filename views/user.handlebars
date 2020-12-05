@@ -1,0 +1,32 @@
+<div class="underhead">
+<h1 class="pageid">Users</h1>
+<table class="logtable">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Password</th>
+    </tr>
+  </thead>
+  <body>
+    {{#each users}}
+    <tr>
+      <td>{{userID}}</td>
+      <td>{{fName}}</td>
+      <td>{{lName}}</td>
+      <td>{{email}}</td>
+      <td>{{password}}</td>
+    </tr>
+    {{/each}}
+    <tr>
+      <td><button type="user-button" name="ADD">Add User</button></td>
+      <td><input type="text" placeholder="First Name"class="lift-entry"></td>
+      <td><input type="text" placeholder="Last Name"class="lift-entry"></td>
+      <td><input type="text" placeholder="Email"class="lift-entry"></td>
+      <td><input type="text" placeholder="Password"class="lift-entry"></td>
+    </tr>
+  </body>
+</table>
+</div>

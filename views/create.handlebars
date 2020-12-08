@@ -1,5 +1,6 @@
 <div class ="underhead">
-<h1 class = "pageid">Add a workout</h1>
+<body>
+  <h1 class = "pageid">Add a workout</h1>
 <table class="create-table">
   <thead>
     <tr>
@@ -9,7 +10,6 @@
       <th>Plan Length</th>
     </tr>
   </thead>
-  <body>
     {{#each plans}}
     <tr>
       <td>{{planID}}</td>
@@ -19,5 +19,55 @@
     </tr>
     {{/each}}
 </table>
-<button class="upload-w" type="button" name="send-workout">Upload Workout</button>
+<form class = "logtable" action="/create" method="post">
+  <input type="text" placeholder="Plan Name" name = "planName" class="lift-entry">
+  <input type="text" placeholder="Plan Description" name = "description" class="lift-entry">
+  <input type="text" placeholder="Duration" name = "duration" class="lift-entry">
+  <input type="submit" value="Create Plan">
+</form>
+<h1 class = "pageid">Add a lift</h1>
+<table class="create-table">
+  <thead>
+    <tr>
+      <th>Lift ID</th>
+      <th>Lift Name</th>
+      <th>Sets </th>
+      <th>Reps</th>
+    </tr>
+  </thead>
+    {{#each lifts}}
+    <tr>
+      <td>{{liftID}}</td>
+      <td>{{liftName}}</td>
+      <td>{{sets}}</td>
+      <td>{{reps}}</td>
+    </tr>
+    {{/each}}
+</table>
+<form class = "logtable" action="/create" method="post">
+  <input type="text" placeholder="Lift Name" name = "liftName" class="lift-entry">
+  <input type="text" placeholder="Sets" name = "sets" class="lift-entry">
+  <input type="text" placeholder="Reps" name = "reps" class="lift-entry">
+  <input type="submit" value="Create Lift">
+</form>
+<h1 class = "pageid">Add a muscle</h1>
+<table class="create-table">
+  <thead>
+    <tr>
+      <th>Muscle ID</th>
+      <th>Muscle Name</th>
+    </tr>
+  </thead>
+    {{#each muscles}}
+    <tr>
+      <td>{{muscleID}}</td>
+      <td>{{muscleTitle}}</td>
+    </tr>
+    {{/each}}
+</table>
+<form class = "logtable" action="/create" method="post">
+  <input type="text" placeholder="Muscle Name" name = "muscleTitle" class="lift-entry">
+  <input type="submit" value="Create Muscle">
+</form>
+</body>
 </div>

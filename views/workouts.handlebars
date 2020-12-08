@@ -5,7 +5,6 @@
     <tr>
       <th>Name</th>
       <th>Time</th>
-      <th>Lifts</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -14,19 +13,52 @@
     <tr>
       <td>{{planName}}</td>
       <td>{{duration}}</td>
-      <td><div class = "muscle-list"><ul>
-        <p>{Lift_Muscles}</p>
-        {{#each lifts}}
-        <li>{{lift_name}} Sets:{{sets}} Reps:{{reps}}</li>
-        {{/each}}
-      </ul></div></td>
       <td>{{description}}</td>
-      <td class="table-button"><button type="button" name="do-button">Do Workout</button></td>
     </tr>
     {{/each}}
     <tr>
       <!-- <td class="table-button"><button type="button" name="button">Create Workout</button></td> -->
     </tr>
+  </body>
+</table>
+
+<h2 class="pageid">Plans With Lifts</h2>
+<table class="logtable">
+  <thead>
+    <tr>
+      <th>Plan Name</th>
+      <th>Lift Name</th>
+      <th>Sets</th>
+      <th>Reps</th>
+    </tr>
+  </thead>
+  <body>
+    {{#each plansWithLifts}}
+    <tr>
+      <td>{{planName}}</td>
+      <td>{{liftName}}</td>
+      <td>{{sets}}</td>
+      <td>{{reps}}</td>
+    </tr>
+    {{/each}}
+  </body>
+</table>
+
+<h2 class="pageid">Lifts With Muscles</h2>
+<table class="logtable">
+  <thead>
+    <tr>
+      <th>Lift Name</th>
+      <th>Muscle Working</th>
+    </tr>
+  </thead>
+  <body>
+    {{#each liftsWithMuscles}}
+    <tr>
+      <td>{{liftName}}</td>
+      <td>{{muscleTitle}}</td>
+    </tr>
+    {{/each}}
   </body>
 </table>
 </div>

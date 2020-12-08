@@ -1,18 +1,23 @@
 <div class ="underhead">
-<h1 class = "pageid">Create a new workout</h1>
+<h1 class = "pageid">Add a workout</h1>
 <table class="create-table">
+  <thead>
     <tr>
-      <td><input type="text" placeholder="Workout Name" class="lift-entry"></td>
+      <th>Plan ID</th>
+      <th>Plan Name</th>
+      <th>Plan Description</th>
+      <th>Plan Length</th>
     </tr>
+  </thead>
+  <body>
+    {{#each plans}}
     <tr>
-      <td><input type="text" placeholder="Lift Name"class="lift-entry"></td>
-      <td><input type="text" placeholder="Reps"class="lift-entry"></td>
-      <td><input type="text" placeholder="Sets"class="lift-entry"></td>
-      <td><input type="text" placeholder="Muscle (Dropdown)"class="lift-entry"></td>
+      <td>{{planID}}</td>
+      <td>{{planName}}</td>
+      <td>{{description}}</td>
+      <td>{{duration}}</td>
     </tr>
-    <tr>
-      <th class="table-button"><button type="button" name="plus-lift">Add Lift</button></th>
-    </tr>
+    {{/each}}
 </table>
 <button class="upload-w" type="button" name="send-workout">Upload Workout</button>
 </div>

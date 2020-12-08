@@ -1,25 +1,49 @@
 module.exports = function(){
   var express = require('express');
+  var bodyParser = require('body-parser');
   var router = express.Router();
 
-  function serveUsers(req, res){
-    console.log("asked for users")
-    var query = 'SELECT userID, fName, lName, email, password FROM users';
-    var mysql = req.app.get('mysql');
-    var context = {}
-
-    function handleRenderingOfUsers(error, results, fields){
-      console.log(error)
-      console.log(results)
-      console.log(fields)
-
-      context.users = results;
-
-      res.render('users', context)
+  function getUsers(res, mysql, context, complete){
+    mysql.pool.query('SELECT userID, fName, lName, email, password FROM users', function(error, results, fields){
+            if(error){
+                res.write(JSON.stringify(error));
+                res.end();
+            }
+            context.users  = results;
+            complete();
+        });
     }
-    mysql.pool.query(query, handleRenderingOfUsers)
-  }
 
-  router.get('/', serveUsers)
+
+  router.post('/', function(req, res){
+    console.log(req.body)
+    var mysql = req.app.get('mysql');
+    var sql = "INSERT INTO users (fName, lName, email, password) VALUES (?, ?, ?, ?)";
+    var inserts = [req.body.fname, req.body.lname, req.body.email, req.body.password];
+    sql = mysql.pool.query(sql, inserts, function(error, results, fields){
+      if(error){
+        res.write(JSON.stringify(error));
+        res.end();
+      }else{
+        res.redirect('/users')
+      }
+    });
+  });
+
+  router.get('/', function(req, res){
+       var callbackCount = 0;
+       var context = {};
+       context.jsscripts = [];
+       var mysql = req.app.get('mysql');
+       getUsers(res, mysql, context, complete);
+       function complete(){
+           callbackCount++;
+           if(callbackCount >= 1){
+               res.render('users', context);
+           }
+
+       }
+   });
+
   return router;
 }();

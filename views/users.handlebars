@@ -20,13 +20,13 @@
       <td>{{password}}</td>
     </tr>
     {{/each}}
-    <tr>
-      <td><button type="user-button" name="ADD">Add User</button></td>
-      <td><input type="text" placeholder="First Name"class="lift-entry"></td>
-      <td><input type="text" placeholder="Last Name"class="lift-entry"></td>
-      <td><input type="text" placeholder="Email"class="lift-entry"></td>
-      <td><input type="text" placeholder="Password"class="lift-entry"></td>
-    </tr>
+  </table>
+  <form class = "logtable" action="/users" method="post">
+    <input type="text" placeholder="First Name" name = "fname" class="lift-entry">
+    <input type="text" placeholder="Last Name" name = "lname" class="lift-entry">
+    <input type="text" placeholder="Email" name = "email" class="lift-entry">
+    <input type="text" placeholder="Password" name = "password" class="lift-entry">
+    <input type="submit" value="Add User">
+  </form>
   </body>
-</table>
 </div>

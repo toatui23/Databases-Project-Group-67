@@ -4,7 +4,7 @@
 */
 var express = require('express');
 var mysql = require('./dbcon.js');
-var bodyparser = require('body-parser');
+var bodyParser = require('body-parser');
 
 var app = express();
 var handlebars = require('express-handlebars').create({defaultLayout:'main'});
@@ -13,6 +13,7 @@ app.engine('handlebars', handlebars.engine);
 app.set('view-engine', 'handlebars');
 //port is set in command line
 app.set('port', process.argv[2]);
+app.use(bodyParser.urlencoded({extended:true}));
 //allows express to server static files, adds virtual prefix /static
 app.use('/static', express.static('public'));
 app.set('view engine', 'handlebars')
@@ -20,6 +21,8 @@ app.set('mysql', mysql);
 app.use('/users', require('./users.js'));
 app.use('/lifts_muscles', require('./lifts_muscles.js'));
 app.use('/plans_lifts', require('./plans_lifts.js'));
+app.use('/logs', require('./logs.js'));
+app.use('/create', require('./create.js'));
 app.use('/', express.static('public'));
 
 

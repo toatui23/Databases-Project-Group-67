@@ -17,7 +17,11 @@ app.set('port', process.argv[2]);
 app.use('/static', express.static('public'));
 app.set('view engine', 'handlebars')
 app.set('mysql', mysql);
+app.use('/users', require('./users.js'));
+app.use('/lifts_muscles', require('./lifts_muscles.js'));
+app.use('/plans_lifts', require('./plans_lifts.js'));
 app.use('/', express.static('public'));
+
 
 app.use(function(req,res){
   res.status(404);
